@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ui_assignment';
+  customersData: any[] = [];
+  addUser=(userData:any)=>{
+    if (this.customersData) {
+      this.customersData.push({ ...userData });
+    } else {
+      this.customersData = [{ ...userData }];
+    }
+  }
 }

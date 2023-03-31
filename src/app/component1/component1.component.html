@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<body>
+    <p id="label">Add User</p>
+  
+    <form [formGroup]="customerData" id="form">
+        <div class="form-group">
+        <label>First Name:</label>
+        <br>
+        <input type="text" required minlength="4" formControlName="firstName" />
+        <div
+        *ngIf="
+        customerData.controls['firstName'].invalid &&
+          (customerData.controls['firstName'].dirty ||
+          customerData.controls['firstName'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['firstName'].errors?.['required']">
+          First Name is required.
+        </div>
+        <div *ngIf="customerData.controls['firstName'].errors?.['minlength']">
+          First Name must be at least 4 characters long.
+        </div>
+      </div>
+     </div>
+        <div class="form-group">
+        <label>Last Name:</label>
+        <br>
+        <input type="text" required minlength="4"  formControlName="lastName"/>
+        <div
+        *ngIf="
+        customerData.controls['lastName'].invalid &&
+          (customerData.controls['lastName'].dirty ||
+          customerData.controls['lastName'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['lastName'].errors?.['required']">
+          Last Name is required.
+        </div>
+        <div *ngIf="customerData.controls['lastName'].errors?.['minlength']">
+          Last Name must be at least 4 characters long.
+        </div>
+      </div>
+      </div>
+        <div class="form-group">
+        <label>Address:</label>
+        <br>
+        <input type="text" required minlength="4" formControlName="address"/>
+        <div
+        *ngIf="
+        customerData.controls['address'].invalid &&
+          (customerData.controls['address'].dirty ||
+          customerData.controls['address'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['address'].errors?.['required']">
+          Address is required.
+        </div>
+        <div *ngIf="customerData.controls['address'].errors?.['minlength']">
+          Address must be at least 4 characters long.
+        </div>
+      </div>
+      </div>
+        <div class="form-group">
+        <label>City:</label>
+        <br>
+        <input type="text" required minlength="4" formControlName="city"/>
+        <div
+        *ngIf="
+        customerData.controls['city'].invalid &&
+          (customerData.controls['city'].dirty ||
+          customerData.controls['city'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['city'].errors?.['required']">
+          City is required.
+        </div>
+        <div *ngIf="customerData.controls['city'].errors?.['minlength']">
+          City must be at least 4 characters long.
+        </div>
+      </div>
+      
+    </div>
+    <div class="form-group">
+        <label>State:</label>
+        <br>
+        <input type="text" required minlength="4" formControlName="state"/>
+        <div
+        *ngIf="
+          customerData.controls['state'].invalid &&
+          (customerData.controls['state'].dirty ||
+            customerData.controls['state'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['state'].errors?.['required']">
+          State is required.
+        </div>
+        <div *ngIf="customerData.controls['state'].errors?.['minlength']">
+          State must be at least 4 characters long.
+        </div>
+      </div>
+      </div>
+        <div class="form-group">
+        <label>Order Total:</label>
+        <br>
+        <input type="text" required minlength="4" formControlName="orderTotal"/>
+        <div
+        *ngIf="
+          customerData.controls['orderTotal'].invalid &&
+          (customerData.controls['orderTotal'].dirty ||
+            customerData.controls['orderTotal'].touched)
+        "
+        class="alert"
+      >
+        <div *ngIf="customerData.controls['orderTotal'].errors?.['required']">
+          Order Total is required.
+        </div>
+        <div *ngIf="customerData.controls['orderTotal'].errors?.['minlength']">
+          Order Total must be at least 4 characters long.
+        </div>
+      </div>
+      </div>
+        <button id="Submit" (click)="onSubmit($event)" [disabled]="customerData.invalid">Submit</button>
+    </form>
+    <hr>
+</body>
+  
+</html>

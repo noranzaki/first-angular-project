@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Customers</h2>
+<div class="input-group">
+<h3 id="custom">Filter:</h3>
+<input type="text" required (keyup)="onFilter($event)" id="custom"/>
+</div>
+
+<table id = "customers" >
+   <thead>
+    <tr>
+    <th>First Name</th>
+    <th>last Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Order Total</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filterData">
+      <td>{{ user?.firstName }}</td>
+      <td>{{ user?.lastName }}</td>
+      <td>{{ user?.address }}</td>
+      <td>{{ user?.city }}</td>
+      <td>{{ user?.state }}</td>
+      <td>{{ user?.orderTotal }}</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>
